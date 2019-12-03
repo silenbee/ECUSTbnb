@@ -1,0 +1,30 @@
+<div class="register-container">
+
+  <mat-card class="register">
+    <p style="text-align:center;font-family: Li-Xuke">欢迎注册爱彼迎校园特别活力加强版</p>
+    <div align="center" class="rightBox" id="loginBox">
+      <form class="example-form" >
+        <mat-form-field class="example-full-width">
+          <input matInput name ="userid" [(ngModel)]="user.userid" placeholder="请输入您的账号" >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput name="username" [(ngModel)]="user.username" matInput placeholder="请输入您的昵称" >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input type="password" name="userpass" [(ngModel)]="user.userpass" matInput placeholder="请输入您的密码" >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input type="password" name="reuserpass" [(ngModel)]="repassword" matInput placeholder="请再次确认您的密码" >
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="Register()">注册</button>
+        <button mat-raised-button color="accent" style="margin-left:10px;">清空</button>
+
+      </form>
+    </div>
+
+  </mat-card>
+</div>

@@ -1,0 +1,99 @@
+<div [@flyIn]="'active'">
+  <div class="header">
+    <div class="float-div">
+      <h1><font color="red">ECUSTbnb华理的爱彼迎</font></h1>
+      <br>
+      <h1><font color="#ffd700">成为ECUSTbnb的房东</font></h1>
+    </div>
+  </div>
+  <hr>
+  <div class="stepper">
+      <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+        {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+      </button>
+      <mat-vertical-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>为你的出租取个名字</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="出租标题" name="title" [(ngModel)]="release.title" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <textarea matInput placeholder="房屋地点" name="address" [(ngModel)]="release.address" formControlName="firstCtrl" required></textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <textarea matInput placeholder="房屋介绍" name="desc" [(ngModel)]="release.desc" formControlName="firstCtrl" required></textarea>
+            </mat-form-field>
+
+            <div>
+              <button mat-button matStepperNext>下一步</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>设定一个合理的租金</ng-template>
+            <mat-form-field>
+              <textarea matInput placeholder="租金价格" name="price" [(ngModel)]="release.price"  formControlName="secondCtrl" required></textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <textarea matInput placeholder="房屋面积" name="area" [(ngModel)]="release.area"  formControlName="secondCtrl" required></textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field >
+              <span matPrefix>+86 &nbsp;</span>
+              <input type="tel" matInput placeholder="联系电话">
+              <mat-icon matSuffix>phone</mat-icon>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>返回上一级</button>
+              <button mat-button matStepperNext>继续</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="thirdFormGroup">
+          <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel>上传展示的图片吧</ng-template>
+
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker1" placeholder="起始日期" [formControl]="date">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker2" [(ngModel)]="release.deadline" name="deadline" placeholder="结束日期"
+                     [formControl]="serializedDate">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+
+            <br>
+            <!--<mat-form-field>
+              <input type="file" placeholder="上传图片" [formControl]="thirdCtrl">
+            </mat-form-field>-->
+            <div>
+              <button mat-button matStepperPrevious>返回上一级</button>
+              <button mat-button matStepperNext>继续</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>确认后提交吧</ng-template>
+          仔细核对上述信息啊
+          <div>
+            <button mat-button matStepperPrevious>返回</button>
+            <button mat-button (click)="stepper.reset()">重置</button>
+            <button mat-button (click)="upload()">提交 </button>
+          </div>
+        </mat-step>
+      </mat-vertical-stepper>
+  </div>
+
+
+</div>

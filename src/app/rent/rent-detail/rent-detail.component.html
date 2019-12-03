@@ -1,0 +1,46 @@
+<div>
+  <div class="header">
+    <div class="float-div">
+      <h1><font color="red">ECUSTbnb华理租房助手</font></h1>
+      <br>
+      <h1><font color="#ffd700">入住ECUSTbnb，纵享品质生活</font></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <mat-card class="show-card">
+        <mat-card-header>
+          <mat-card-title>{{rentdetail.housedesc}}</mat-card-title>
+          <mat-card-subtitle>{{rentdetail.houseid}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{rentdetail.imageURL}}" alt="房子简介">
+        <!--<mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>-->
+      </mat-card>
+
+    </div>
+    <div class="col-sm-6">
+      <div class="list-div">
+        <mat-list role="list">
+          <mat-list-item role="listitem">房屋地址：{{rentdetail.houseAddress}}</mat-list-item>
+          <mat-list-item role="listitem">房屋面积：{{rentdetail.houseArea}}平方米</mat-list-item>
+          <mat-list-item role="listitem">房屋月租：￥{{rentdetail.housePrice}}元/月</mat-list-item>
+          <mat-list-item role="listitem">房屋描述：{{rentdetail.houseDescribe}}</mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div align="center">
+      <button mat-fab>
+        <i class="fa fa-check" aria-hidden="true"></i>
+      </button>
+      <button mat-fab>
+        <i class="fa fa-heart" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>

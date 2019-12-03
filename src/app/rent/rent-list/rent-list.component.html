@@ -1,0 +1,55 @@
+<div class="list-container">
+
+  <form class="search-form">
+    <div class="row" style="margin-left: 15%">
+        <mat-form-field class="example-full-width">
+          <input type="text" matInput placeholder="关键字">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      <div class="butt-group">
+        <button mat-raised-button  color="accent">搜索一下</button>
+        <button mat-raised-button  color="primary">发布一下</button>
+      </div>
+    </div>
+  </form>
+
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="big-div">
+
+          <div class="rent-item-container" *ngFor="let rent of RentList">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{rent.housedesc}}</mat-card-title>
+                <mat-card-subtitle>月租：{{rent.housePrice}}</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image src="{{rent.imageURL}}" alt="房子简介">
+              <mat-card-content>
+                <p>
+                  {{rent.housedesc}}
+                  {{rent.houseid}}
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button [routerLink]="['/rent/rentDetail',rent.houseid]">详情</button>
+                <button mat-button>收藏</button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+
+
+        <div class="paginator-div">
+          <br><br><hr>
+          <mat-paginator [length]="20"
+                         [(pageSize)]="itemsPerPage"
+                         [pageSizeOptions]="[3, 6, 9, 12]"
+                         (page)="pageChanged($event)">
+          </mat-paginator>
+        </div>
+
+      </div>
+    </div>
+</div>

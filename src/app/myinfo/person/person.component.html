@@ -1,0 +1,65 @@
+<div  [@flyIn]="'active'">
+  <mat-card >
+    <div style="font-family:Li-Xuke;
+                 font-size: large;color: #ac2925">
+      <p>基本信息如下</p>
+    </div>
+      <div >
+      <form class="example-container">
+        <mat-form-field>
+          <input matInput name="userid" [(ngModel)]="person.userid" disabled="disabled" placeholder="我的id">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput name="username" [(ngModel)]="person.username" disabled="disabled" placeholder="我的名字">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput name="userphone" [(ngModel)]="person.userphone" disabled="disabled" placeholder="我的电话">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput name="userEmail" [(ngModel)]="person.userEmail" disabled="disabled" placeholder="我的邮箱">
+        </mat-form-field>
+
+      </form>
+     </div>
+  </mat-card>
+
+  <mat-card >
+    <div style="font-family:Li-Xuke;
+                 font-size: large;color:#2aabd2">
+      <p>随时更新我的状态</p>
+    </div>
+    <div >
+      <form class="example-container">
+        <mat-form-field>
+          <input matInput name="userNeed" [(ngModel)]="person.userNeed" placeholder="我的需求">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput name="idealprice" [(ngModel)]="person.idealprice" placeholder="目标价位">
+        </mat-form-field>
+
+        <mat-form-field>
+        <textarea matInput  placeholder="理想房源"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select placeholder="状态" name="userstate" [(ngModel)]="person.userstate">
+            <mat-option value="0" selected="selected">求房中</mat-option>
+            <mat-option value="1">已入住</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="modify()">保存</button>
+
+        <button mat-raised-button color="accent"  style="margin-left: 5%;">取消</button>
+
+      </form>
+    </div>
+  </mat-card>
+
+</div>
+
+

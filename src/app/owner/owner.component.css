@@ -1,0 +1,27 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  font-size: large;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.stepper{
+  font-size: 15px;
+  background:url('../../assets/image/owner-background.jpg');
+  align:center;
+
+}
+.float-div{
+  font-family: Li-Xuke;
+  padding-top: 10%;
+  padding-left: 10%;
+}
+.header{
+  width:100%;
+  height:500px;
+  background:url('../../assets/image/owner-title.png');
+  background-size:100%;
+}

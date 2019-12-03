@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
+.main-left{
+  padding-left:10px;
+  border-left:10px;
+  margin-left:50px;
+}
+
+.slide-image{
+  width:800px;
+  height:300px;
+}
+.carousel{
+  margin-top: 20px;
+}
+
+.slide-container{
+  float:left;
+  /*position: relative;*/
+  width:800px;
+  height:400px;
+  margin-left:120px;
+}
+.router{
+  margin-top:20px;
+  margin-left:40px;
+}
+.right-content{
+  margin-left:40px;
+}
+
+.explore{
+  margin-top: 20px;
+}
+.float-card{
+  float:left;
+  width:15%;height:8%;
+  margin-left: 120px;
+}
+.row{
+/*  position: relative;*/
+}

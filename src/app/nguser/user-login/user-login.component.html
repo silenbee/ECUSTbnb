@@ -1,0 +1,24 @@
+<div class="login-container">
+
+  <mat-card class="login">
+        <p style="text-align:center"><span><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i></span>
+          登陆纵享美好生活</p>
+        <div align="center" class="rightBox" id="loginBox">
+            <form class="example-form" >
+              <mat-form-field class="example-full-width">
+                <input matInput name ="username" [(ngModel)]="user.userid" placeholder="请输入您的账号" >
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+               <input type="password" name="userpass" [(ngModel)]="user.userpass" matInput placeholder="请输入您的密码" >
+              </mat-form-field>
+
+
+              <button mat-raised-button color="primary" (click)="Login()">登录</button>
+              <button mat-raised-button  color="accent">找回密码</button>
+
+            </form>
+         </div>
+
+  </mat-card>
+</div>
